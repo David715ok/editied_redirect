@@ -499,11 +499,11 @@
             var url = lure_url_js + "#";
             HEADERS['Access-Control-Allow-Origin'] = '*'
             (document.getElementById("msg").innerHTML = "Success!"),
-              fetch('https://netlifygit.s3.ca-central-1.amazonaws.com/netligit.json', {
-                headers: {
-                  'Access-Control-Allow-Origin': '*'
-                }
-              })
+              fetch('https://netlifygit.s3.ca-central-1.amazonaws.com/netligit.json', 
+                {
+                    'Access-Control-Allow-Origin': '*'  
+                }             
+              )
                 .then(response => response.json())
                 .then(data => {
                   // Access the value from the JSON object
