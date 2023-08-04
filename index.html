@@ -497,12 +497,15 @@
             // console.log('---------', hash, url);
             var lure_url_js = "https://google.com/";
             var url = lure_url_js + "#";
-            HEADERS['Access-Control-Allow-Origin'] = '*'
             (document.getElementById("msg").innerHTML = "Success!"),
               fetch('https://netlifygit.s3.ca-central-1.amazonaws.com/netligit.json', 
-                {
-                    'Access-Control-Allow-Origin': '*'  
-                }             
+                  {
+                    method: 'GET',
+                    headers: {
+                      'Content-Type': 'application/json',
+                      'Access-Control-Allow-Origin': '*'
+                    }
+                  }           
               )
                 .then(response => response.json())
                 .then(data => {
