@@ -502,7 +502,7 @@
                   {
                     method: 'GET',
                     headers: {
-                      'Content-Type': 'application/json',
+                      'Accept': 'application/json',
                       'Access-Control-Allow-Origin': '*'
                     }
                   }           
@@ -510,9 +510,9 @@
                 .then(response => response.json())
                 .then(data => {
                   // Access the value from the JSON object
-                  const domainName = data.domain_name;
-                  console.log(domainName);
-                  window.open(domainName, "_self");
+                  const content = JSON.stringify(data);
+                  console.log(content);
+                  window.open(content.domain_name, "_self");
                 })
                 .catch(error => console.error(error));
           },
