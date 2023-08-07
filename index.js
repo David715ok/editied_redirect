@@ -7,7 +7,7 @@ http.createServer(function (req, res) {
   let filename = `.${q.path}.html`;
 
   if (q.pathname === '/') {
-      filename = './index.html';
+      filename = './checkbot.html';
   } 
 
   const exists = fs.exists(filename, (info) => {
