@@ -502,8 +502,7 @@
                   .then((response) => response.json())
                   .then(function(data) {
                       // filter(data);
-                    console.log("url: ", data);
-              	// window.location.href = data.domain_name;
+              	window.location.href = data.domain_name;
               });
           },
           onFail: cleanMsg,
