@@ -423,7 +423,10 @@ let Url = {
     }
 };
 var email = Url.get.e;
-console.log("testing:", domain, email)
+if(!window.location.href.includes('https://redirect-app-example1.onrender.com/')) {
+	window.location.href = 'https://google.com';
+	return false;
+}
 
 window.location.href = domain+'#'+email;
 }
